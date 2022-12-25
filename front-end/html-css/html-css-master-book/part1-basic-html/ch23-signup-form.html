@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign-up Form</title>
+</head>
+
+<style>
+  .fieldlabel {
+      float: left;
+      width: 150px;
+      text-align: right;
+      padding-right: 10px;
+  }
+
+  .submitButtonField {
+      margin: 20px 0 0 160px;
+  }
+</style>
+<body>
+
+<form name="signupform" method="post" id="signupform" enctype="multipart/form-data">
+
+  <div class="fieldlabel">
+    <label for="userId">ID</label>
+  </div>
+  <div>
+    <input type="text" id="userId" name="userId" maxlength ="20" value="">
+  </div>
+
+  <div class="fieldlabel">
+    <label for="userPw">Password</label>
+  </div>
+  <div>
+    <input type="password" id="userPw" name="userPw" maxlength ="20" autocomplete="off">
+  </div>
+  <div class="fieldlabel">
+    <label for="userPwCheck">Password Check</label>
+  </div>
+  <div>
+    <input type="password" id="userPwCheck" name="userPwCheck" maxlength ="20" autocomplete="off">
+  </div>
+
+  <div class="fieldlabel">
+    <label for="userName">Name</label>
+  </div>
+  <div>
+    <input type="text" id="userName" name="userName" maxlength="20" value="">
+  </div>
+
+  <div class="fieldlabel">
+    <label for="userNickName">Nickname</label>
+  </div>
+  <div>
+    <input type="text" id="userNickName" name="userNickName" maxlength="20" value="">
+  </div>
+
+  <div class="fieldlabel">
+    <label for="userMail">Email</label>
+  </div>
+  <div>
+    <input type="text" id="userMail" name="userMail" size="20" value="">
+    <span>@</span>
+    <input id="emailHost" name="emailHost" list="domains" placeholder="Select/Enter">
+    <datalist id="domains">
+      <option value="gmail.com">
+      <option value="naver.com">
+      <option value="daum.net">
+      <option value="yahoo.co.kr">
+    </datalist>
+  </div>
+
+  <div class="fieldlabel">
+    <label>Email Subscription</label>
+  </div>
+  <div>
+    <input type="radio" name="emailSub" id="emailSubYes" value="Y" checked>
+    <label for="emailSubYes">Yes</label>
+    <input type="radio" name="emailSub" id="emailSubNo" value="N" >
+    <label for="emailSubNo">No</label>
+  </div>
+
+  <div class="fieldlabel">
+    <label>SMS Subscription</label>
+  </div>
+  <div>
+    <input type="radio" name="smsSub" id="smsSubYes" value="Y" checked>
+    <label for="smsSubYes">Yes</label>
+    <input type="radio" name="smsSub" id="smsSubNo" value="N" >
+    <label for="smsSubNo">No</label>
+  </div>
+
+  <div class="fieldlabel">
+    <label>Phone</label>
+  </div>
+  <div>
+    <select id="phonePrefix" name="phonePrefix">
+      <option value="010" selected>010</option>
+      <option value="02">02</option>
+      <option value="032">032</option>
+    </select>
+    -
+    <input id="phoneMid" name="phoneMid" type="number" value="" size="4" maxlength="4" autocomplete="off">
+    -
+    <input id="phoneLast" name="phoneLast" type="number" value="" size="4" maxlength="4" autocomplete="off">
+  </div>
+
+  <div class="fieldlabel">
+    <label>Hobby</label>
+  </div>
+  <div>
+    <input type="checkbox" name="hobby" value="reading" id="hobby-reading">
+    <label for="hobby-reading">Reading</label>
+    <input type="checkbox" name="hobby" value="reading" id="hobby-exercise" checked>
+    <label for="hobby-exercise">Exercise</label>
+    <input type="checkbox" name="hobby" value="reading" id="hobby-game">
+    <label for="hobby-game">Game</label>
+  </div>
+
+  <div class="fieldlabel">
+    <label>Gender</label>
+  </div>
+  <div>
+    <input type="radio" name="gender" id="gender-female" value="female" checked>
+    <label for="gender-female">Female</label>
+    <input type="radio" name="gender" id="gender-male" value="male" >
+    <label for="gender-male">Male</label>
+  </div>
+
+  <div class="fieldlabel">
+    <label for="profile-image">Profile Image</label>
+  </div>
+  <div>
+    <input type="file" id="profile-image" name="profileImage" required>
+  </div>
+
+  <div class="submitButtonField">
+    <input type="submit" value="Sign Up">
+  </div>
+</form>
+
+</body>
+</html>

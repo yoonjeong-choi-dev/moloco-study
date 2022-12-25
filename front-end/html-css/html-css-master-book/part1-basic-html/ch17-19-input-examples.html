@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>input tag examples</title>
+</head>
+<body>
+
+<hr>
+<h2>Basic Example - User Info</h2>
+<form>
+  Name: <input type="text" name="username"><br>
+  Hidden field: <input type="hidden" name="hidden_field" value="secret!"><br>
+  Password: <input type="password" name="password"><br>
+
+  Gender:
+  <input type="radio" name="gender" value="female" checked> Female
+  <input type="radio" name="gender" value="male"> Male <br>
+
+  Transportation:
+  <input type="checkbox" name="vehicle" value="bike"> Bike
+  <input type="checkbox" name="vehicle" value="bus"> Bus
+  <input type="checkbox" name="vehicle" value="car"> Car
+  <input type="checkbox" name="vehicle" value="subway"> Subway <br>
+
+  Birthday: <input type="date" name="birthday" min="1900-01-01"><br>
+  Email: <input type="email" name="email"><br>
+  Age: <input type="range" name="age" min="0" max="100"><br>
+  Phone: <input type="tel" name="phone"><br>
+  Blog Url: <input type="url" name="blog_url"><br>
+
+  <br><br>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</form>
+
+
+<hr>
+<h2>Basic Example 2</h2>
+<form>
+  Color: <input type="color" name="user_color"><br>
+
+  Enter even integer: <input type="number" name="even_number" step="2"><br>
+
+  Search:
+  <input type="search" name="search_query" placeholder="Enter keyword">
+  <input type="button" value="검색">
+  <br>
+
+  <br><br>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</form>
+
+<hr>
+<h2>Basic Example 3 - FIle upload</h2>
+<form enctype="multipart/form-data">
+  Image upload: <input type="file" name="image" accept="image/*"><br>
+  Video upload: <input type="file" name="video" accept="video/*"><br>
+
+  <br><br>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</form>
+
+<hr>
+<h2>Not supported to IE</h2>
+<form>
+  url type: <input type="url" required>
+  <div>It just check that the input string starts with http:// or https://</div>
+  <input type="submit" value="validate url">
+</form><br>
+
+<form>
+  color picker: <input type="color">
+</form><br>
+
+<form>
+  time type: <input type="time" ><br>
+  date type: <input type="date"><br>
+  datetime-local type: <input type="datetime-local"><br>
+  week type: <input type="week"><br>
+  month type: <input type="month"><br>
+</form><br>
+
+</body>
+</html>
