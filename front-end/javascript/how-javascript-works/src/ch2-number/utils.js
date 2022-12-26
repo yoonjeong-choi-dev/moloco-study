@@ -1,3 +1,22 @@
+/**
+ * To express a number with `number = sign * coefficient * (2**exponent)` for 64-bit floating point system.
+ * <br> Each component is assigned to following bits :
+ * - sign: 1 bit for plus/minus
+ * - coefficient: 52 bits to express a real number in [0.5, 1)
+ * - exponent: 11 bits for binary expression of an integer
+ * @typedef {Object} NumberBitComposition
+ * @property {number} number - origin number
+ * @property {number} sign - sign(1 or -1) of the number
+ * @property {number} coefficient - coefficient(significand) part of the number
+ * @property {number} exponent - exponent part of the number
+ */
+
+/**
+ * Deconstruct a number to double precision floating point(IEEE 754).
+ * @function deconstruct
+ * @param {number} number - any number type
+ * @returns {NumberBitComposition|null}
+ */
 export function deconstruct(number) {
   if (typeof number !== 'number' || Number.isNaN(number)) return null;
 

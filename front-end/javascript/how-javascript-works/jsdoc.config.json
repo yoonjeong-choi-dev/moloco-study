@@ -1,0 +1,34 @@
+{
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "source": {
+    "include": ["src/"],
+    "exclude": [ "node_modules/", "docs" ],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": ""
+  },
+  "sourceType": "module",
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "opts" : {
+    "template" : "node_modules/docdash",
+    "encoding" : "utf8",
+    "destination" : "./docs",
+    "recurse" : true,
+    "verbose" : true
+  },
+  "templates" : {
+    "cleverLinks" : false,
+    "monospaceLinks" : false,
+    "default" : {
+      "outputSourceFiles" : false
+    },
+    "docdash" : {
+      "static" : false,
+      "sort" : true
+    }
+  }
+}
