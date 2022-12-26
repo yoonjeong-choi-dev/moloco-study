@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Layout</title>
+
+  <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+
+      th, td {
+          padding: 5px 15px;
+          min-width: 50px;
+          font-size: 0.875em;
+          text-align: center;
+      }
+
+      table {
+          width: 600px;
+      }
+
+      .aside {
+          width: 25%;
+      }
+
+  </style>
+</head>
+<body>
+<table>
+  <tr>
+    <td class="aside">SNS</td>
+    <td>Title</td>
+    <td class="aside">Site Menus</td>
+  </tr>
+
+  <tr>
+    <td colspan="3">Top Menu</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">Main Banner</td>
+    <td rowspan="3">Side Bar</td>
+  </tr>
+
+  <tr>
+    <td colspan="2"> Rolling Banner</td>
+  </tr>
+
+  <tr>
+    <td colspan="2">Thumbnail List</td>
+  </tr>
+
+  <tr>
+    <td colspan="3">Bottom Info</td>
+  </tr>
+
+  <tr>
+    <td colspan="3">Footter</td>
+  </tr>
+</table>
+
+</body>
+</html>

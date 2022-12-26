@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Selector Example</title>
+  <style>
+    li:first-child {
+        border: red solid 1px;
+    }
+
+    li:last-child {
+        border: blue solid 1px;
+    }
+
+    li:nth-child(2n) {
+        font-weight: bold;
+        color: red;
+    }
+
+    li:nth-child(2n+1) {
+        font-weight: bold;
+        color: blue;
+    }
+
+    li:nth-of-type(2n)::before {
+        content: 'even of type li - ';
+    }
+
+    li:nth-of-type(2n+1)::before {
+        content: 'odd of type li - '
+    }
+  </style>
+</head>
+<body>
+
+<strong>ul basic</strong>
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+
+<strong>ul 1</strong>
+<ul>
+  <span>span 1</span>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+</ul>
+
+<strong>ul 2</strong>
+<ul>
+  <li>6</li>
+  <span>span 2</span>
+</ul>
+
+<strong>ul 3</strong>
+<ul>
+  <li>7</li>
+  <li>8</li>
+</ul>
+
+</body>
+</html>
