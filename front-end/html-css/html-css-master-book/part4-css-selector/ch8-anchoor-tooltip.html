@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anchor Tooltip</title>
+
+  <style>
+    a.tooltip:hover:after {
+      content: ' (' attr(href) ') ';
+      position: absolute;
+      border: 1px solid #e0e0e0;
+      background-color: #f0f0f0;
+      padding: 2px 5px;
+      left: 2em;
+      right: 2em;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<a class="tooltip" href="https://naver.com">Naver</a><br>
+<a class="tooltip" href="google.com">Google</a>
+
+</body>
+</html>
