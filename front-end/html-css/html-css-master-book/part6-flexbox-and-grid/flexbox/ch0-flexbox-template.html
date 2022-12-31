@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>flexbox 기본 템플릿</title>
+
+  <style>
+    .main-wrapper {
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .flexbox-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .flexbox-container .flexbox-item {
+      /*기본 너비 및 최소 높이 지정*/
+      min-height: 200px;
+      flex-basis: 150px;
+      flex-grow: 1;
+
+      background-color: #aaf;
+    }
+  </style>
+</head>
+<body>
+<section class="main-wrapper">
+  <div class="flexbox-container">
+    <div class="flexbox-item">Content Item 1</div>
+    <div class="flexbox-item">Content Item 2</div>
+    <div class="flexbox-item">Content Item 3</div>
+    <div class="flexbox-item">Content Item 4</div>
+  </div>
+</section>
+</body>
+</html>

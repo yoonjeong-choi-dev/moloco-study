@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Layout</title>
+
+  <style>
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+      background-color: #f0f0f0;
+    }
+
+    .content .item {
+      margin-bottom: 1em;
+      height:  50px;
+      background-color: #aa9;
+      text-align: center;
+
+      /* 고정 크기 레이아웃을 제외한 나머지는 컨테이너 크기에 맞춰서 채워준다 */
+      flex-grow: 1;
+
+      /* 아이템 내부 중앙 정렬*/
+      display: flex;
+      align-items: center;
+    }
+    
+    .content .item span {
+      /* 컨텐츠(텍스트) 가운데 정렬을 위해서*/
+      width: 100%;
+    }
+
+    .content .item:nth-last-child(1) {
+      margin-bottom: 0
+    }
+    .content .item:nth-child(1) {
+      width: 280px;
+      margin-right: 1.25em;
+      flex-grow: 0;
+    }
+    /*.content .item:nth-child(2) {*/
+    /*  width: 70%*/
+    /*}*/
+    .content .item:nth-child(3) {
+      width: 100%
+    }
+    .content .item:nth-child(4) {
+      margin-right: 1.25em;
+      min-height: 600px;
+    }
+    .content .item:nth-child(5) {
+      width: 280px;
+      min-height: 300px;
+      flex-grow: 0;
+    }
+    .content .item:nth-child(6) {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="content">
+  <div class="item"><span>Logo</span></div>
+  <div class="item"><span>Title</span></div>
+  <div class="item"><span>Header</span></div>
+  <div class="item"><span>Main</span></div>
+  <div class="item"><span>Side Bar</span></div>
+  <div class="item"><span>Footer</span></div>
+</div>
+
+</body>
+</html>

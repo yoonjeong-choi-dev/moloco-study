@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basic flexbox</title>
+
+  <style>
+    .content {
+      display: flex;
+      background-color: #9a9;
+
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      /*height: 200px;*/
+      padding: 10px;
+    }
+
+    .content .item {
+      width: 100px;
+      background-color: #a99;
+      text-align: center;
+    }
+
+    .content .item:nth-child(5n+1) {
+      height: 50px;
+      font-size: 0.5em;
+    }
+    .content .item:nth-child(5n+2) {
+      height: 150px;
+      font-size: 1.5em;
+    }
+    .content .item:nth-child(5n+3) {
+      height: 100px;
+      font-size: 0.7em;
+    }
+    .content .item:nth-child(5n+4) {
+      height: 180px;
+      font-size: 2em;
+    }
+    .content .item:nth-child(5n+5) {
+      height: 30px;
+      font-size: 0.3em;
+      align-self: flex-end;
+    }
+  </style>
+</head>
+<body>
+
+<div class="content">
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+  <div class="item">Item 4</div>
+  <div class="item">Item 5</div>
+</div>
+
+</body>
+</html>

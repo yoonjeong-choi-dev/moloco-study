@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Layout</title>
+</head>
+<style>
+  .main-layout {
+    background-color: #f0f0f0;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  /* Main Contents*/
+  .main-layout main {
+    /*Divide aside and content*/
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1em;
+  }
+
+  .main-layout main aside, article {
+    background-color: #eff;
+  }
+
+  .main-layout aside {
+    /*fix size*/
+    flex-basis: 250px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .main-layout aside .content {
+    width: 100%;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .main-layout article {
+    padding: 10px;
+
+    /*responsive size*/
+    flex-basis: 600px;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .main-layout .content-layout {
+    background-color: lightcyan;
+
+    /*container for content*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  .content-layout .content-item {
+    padding: 10px;
+    background-color: lightblue;
+    min-height: 150px;
+    flex-basis: auto;
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+
+  /* Menu */
+  .main-layout header {
+    padding: 5px 20px;
+    box-sizing: border-box;
+    background-color: #d69696;
+    margin-bottom: 10px;
+  }
+
+  header ul.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1em;
+  }
+
+  ul.menu > li a {
+    display: block;
+    padding: 5px 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: -1px;
+  }
+
+  ul.menu > li {
+    text-align: center;
+  }
+  /* 메뉴들을 그룹핑하기 위해서 그룹핑 첫 요소 왼쪽에 마진 넣기*/
+  ul.menu > li:nth-child(2) {
+    margin-left: auto;
+  }
+
+  ul.menu > li:nth-child(7) {
+    margin-left: auto;
+  }
+
+  /* 오른쪽 로그인 및 회원가입 스타일 적용*/
+  ul.menu > li:nth-last-child(-n+2) {
+    border-radius: 15px;
+    background-color: #faa;
+  }
+  ul.menu > li:nth-last-child(-n+2):hover {
+    background-color: #f66;
+  }
+  ul.menu > li:nth-last-child(-n+2):hover a{
+    color: #fff;
+  }
+
+  ul.menu > li:hover:nth-child(-n+6):hover {
+    border-bottom: 2px solid #f66;
+  }
+  
+  /* 특정 너비 이하에서는 세로로 메뉴들을 보여준다 */
+  @media screen and (max-width: 864px){
+    .main-layout header {
+      height: 100%;
+      width: 100%;
+    }
+
+    header ul.menu {
+      flex-direction: column;
+      height: 100%;
+    }
+
+    ul.menu > li {
+      text-align: initial;
+    }
+
+    ul.menu > li:nth-child(2) {
+      margin-left: 0;
+      margin-top: auto;
+    }
+    ul.menu > li:nth-child(7) {
+      margin-left: 0;
+      margin-top: auto;
+    }
+
+    ul.menu > li:hover:nth-child(-n+6):hover {
+      border-bottom: initial;
+    }
+  }
+
+</style>
+<body>
+
+
+<div class="main-layout">
+  <header>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Product</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Downloads</a></li>
+      <li><a href="#">Support</a></li>
+      <li><a href="#">My Page</a></li>
+
+      <li><a href="#">Sign In</a></li>
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </header>
+  <main>
+    <aside>
+      <div class="content">Side Bar</div>
+    </aside>
+    <article>
+      <h1>Title</h1>
+      <div class="content-layout">
+        <div class="content-item">Content 1</div>
+        <div class="content-item">
+          This makes more sense in the case of computer networks. For example, applications in the application layer
+          send and receive data from the network. The application layer on one end system has a parallel on another end
+          system, i.e., These applications in the application layer are seemingly communicating with each other directly
+          or horizontally. They are not aware of the layer below.
+        </div>
+        <div class="content-item">Content 2</div>
+
+        <div class="content-item">Content 4</div>
+        <div class="content-item">Content 5</div>
+      </div>
+    </article>
+  </main>
+</div>
+
+</body>
+</html>
