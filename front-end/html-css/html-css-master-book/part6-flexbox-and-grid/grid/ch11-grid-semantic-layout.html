@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>시멘틱 레이아웃</title>
+
+  <style>
+    .main-layout .header {
+      grid-area: header;
+    }
+
+    .main-layout .title {
+      grid-area: title;
+      height: 50px;
+      margin: 0;
+    }
+
+    .main-layout .sidebar-left {
+      grid-area: sidebar-left;
+    }
+
+    .main-layout .sidebar-right {
+      grid-area: sidebar-right;
+    }
+
+    .main-layout .main{
+      grid-area: main;
+      height: 300px;
+    }
+
+    .main-layout .footer{
+      grid-area: footer;
+    }
+
+    .main-layout {
+      width: 600px;
+      display: grid;
+      grid-template-columns: 100px auto 150px;
+      grid-template-areas:
+        "header header header"
+        "sidebar-left title sidebar-right"
+        "sidebar-left main sidebar-right"
+        "footer footer footer";
+      gap: 10px;
+    }
+    .main-layout .item {
+      background-color: #a99;
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-layout">
+  <header class="header item">Header</header>
+  <aside class="sidebar-left item">Sidebar1</aside>
+  <h1 class="title item">Title</h1>
+  <main class="main item">Contents</main>
+  <aside class="sidebar-right item">Sidebar2</aside>
+  <footer class="footer item">Footer</footer>
+</div>
+
+</body>
+</html>
