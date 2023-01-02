@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scrollable Table</title>
+
+  <style>
+    .main-layout {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+      border: lightblue solid 1px;
+    }
+
+    .scrollable-table{
+      table-layout: fixed;
+      border-collapse: collapse;
+      border: 1px solid #888;
+    }
+
+    .scrollable-table thead {
+      background: #a88;
+      color: #fff;
+
+      display: block;
+    }
+
+    .scrollable-table tbody {
+      display: block;
+      height: 220px;
+      overflow: auto;
+    }
+
+    .scrollable-table th, .scrollable-table td {
+      padding: 10px;
+      width: 100px;
+      text-align: center;
+      font-size: 0.875em;
+    }
+
+    .scrollable-table tbody tr:nth-child(2n+1) {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+<div class="main-layout">
+  <table class="scrollable-table">
+    <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+      <th>Header 3</th>
+      <th>Header 4</th>
+      <th>Header 5</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Data 1-1</td>
+        <td>Data 1-2</td>
+        <td>Data 1-3</td>
+        <td>Data 1-4</td>
+        <td>Data 1-5</td>
+      </tr>
+      <tr>
+        <td>Data 2-1</td>
+        <td>Data 2-2</td>
+        <td>Data 2-3</td>
+        <td>Data 2-4</td>
+        <td>Data 2-5</td>
+      </tr>
+      <tr>
+        <td>Data 3-1</td>
+        <td>Data 3-2</td>
+        <td>Data 3-3</td>
+        <td>Data 3-4</td>
+        <td>Data 3-5</td>
+      </tr>
+      <tr>
+        <td>Data 4-1</td>
+        <td>Data 4-2</td>
+        <td>Data 4-3</td>
+        <td>Data 4-4</td>
+        <td>Data 4-5</td>
+      </tr>
+      <tr>
+        <td>Data 5-1</td>
+        <td>Data 5-2</td>
+        <td>Data 5-3</td>
+        <td>Data 5-4</td>
+        <td>Data 5-5</td>
+      </tr>
+      <tr>
+        <td>Data 6-1</td>
+        <td>Data 6-2</td>
+        <td>Data 6-3</td>
+        <td>Data 6-4</td>
+        <td>Data 6-5</td>
+      </tr>
+      <tr>
+        <td>Data 7-1</td>
+        <td>Data 7-2</td>
+        <td>Data 7-3</td>
+        <td>Data 7-4</td>
+        <td>Data 7-5</td>
+      </tr>
+      <tr>
+        <td>Data 8-1</td>
+        <td>Data 8-2</td>
+        <td>Data 8-3</td>
+        <td>Data 8-4</td>
+        <td>Data 8-5</td>
+      </tr>
+      <tr>
+        <td>Data 9-1</td>
+        <td>Data 9-2</td>
+        <td>Data 9-3</td>
+        <td>Data 9-4</td>
+        <td>Data 9-5</td>
+      </tr>
+      <tr>
+        <td>Data 10-1</td>
+        <td>Data 10-2</td>
+        <td>Data 10-3</td>
+        <td>Data 10-4</td>
+        <td>Data 10-5</td>
+      </tr>
+      <tr>
+        <td>Data 11-1</td>
+        <td>Data 11-2</td>
+        <td>Data 11-3</td>
+        <td>Data 11-4</td>
+        <td>Data 11-5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

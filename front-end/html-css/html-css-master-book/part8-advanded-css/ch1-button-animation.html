@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Button</title>
+  <style>
+    .btn-group .btn {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: #888;
+      border: 1px solid #e8e8e8;
+      font-size: 1.125em;
+      letter-spacing: 0;
+      padding: 10px 60px;
+      cursor: pointer;
+      display: inline-block;
+      margin: 3px 10px;
+
+      transition: all 0.5s;
+
+
+    }
+    .btn-group .btn:hover {
+      color: white;
+      transition: all 0.5s;
+    }
+
+    /*curtain animation*/
+    .btn-group .save, .btn-group .cancel {
+      /*curtain animation*/
+      position: relative;
+    }
+    .btn-group .save::after, .btn-group .cancel::after {
+      position: absolute;
+      content: '';
+      z-index: -1;
+      width: 100%;
+      height: 0;
+      top: 0;
+      left: 0;
+      transition: all 0.5s;
+    }
+
+    .btn-group .save:hover::after {
+      background: #0039aa;
+      height: 100%;
+    }
+
+    .btn-group .cancel:hover::after {
+      background: #a00;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div class="btn-group">
+  <button class="btn save">Save</button>
+  <button class="btn cancel">Cancel</button>
+</div>
+
+</body>
+</html>

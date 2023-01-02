@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Center</title>
+
+  <style>
+    .outer {
+      width: 300px;
+      height: 300px;
+      background-color: #8a8;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .outer.flex {
+      display: flex;
+    }
+
+    .outer.grid {
+      display: grid;
+    }
+
+    .outer > .inner {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+<div class="outer grid">
+  <div class="inner">Test</div>
+</div>
+
+<br>
+<div class="outer flex">
+  <div class="inner"><h1>Test</h1></div>
+</div>
+
+<br>
+<div class="outer flex">
+  <div class="inner">SNMP is widely used in network management for network monitoring. SNMP exposes management data in the form of variables on the managed systems</div>
+</div>
+
+<br>
+<div class="outer grid">
+  <div class="inner">SNMP is widely used in network management for network monitoring. SNMP exposes management data in the form of variables on the managed systems</div>
+</div>
+
+</body>
+</html>
