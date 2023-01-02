@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Checkbox</title>
+
+  <style>
+    .image-checkbox {
+      display: none;
+    }
+    .image-checkbox + label {
+      cursor: pointer;
+      user-select: none;
+
+      background-repeat: no-repeat;
+      background-image: url('./img/checker-off.svg');
+
+      padding-left: 1.5em;
+      margin-right: 10px;
+      font-size: 1em;
+      vertical-align: middle;
+    }
+
+    .image-checkbox:checked + label {
+      background-image: url('./img/checker-on.svg');
+    }
+
+    .image-checkbox:disabled + label {
+      background-image: url('./img/checker-disabled.svg');
+    }
+  </style>
+</head>
+<body>
+<input type="checkbox" name="checker" id="check1" class="image-checkbox">
+<label for="check1">Check1</label>
+
+<input type="checkbox" name="checker" id="check2" class="image-checkbox" checked>
+<label for="check2">Check2</label>
+
+<input type="checkbox" name="checker" id="check3" class="image-checkbox" disabled>
+<label for="check3">Check3 disabled</label>
+</body>
+</html>

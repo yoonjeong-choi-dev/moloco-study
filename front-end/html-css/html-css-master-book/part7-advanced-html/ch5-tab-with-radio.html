@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tab Menus</title>
+
+  <style>
+    .main-layout {
+      /*border: magenta solid 1px;*/
+      /*width: 100%;*/
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .tabs {
+      position: relative;
+      padding: 0;
+      list-style: none;
+      min-height: 250px;
+      overflow: hidden;
+    }
+
+    .tab {
+      float: left;
+      padding: 10px 0;
+    }
+
+    .tab input[type=radio] {
+      display: none;
+    }
+
+    .tab label {
+      position: relative;
+      background: #eee;
+      padding: 8px 20px;
+      border: 1px solid #ccc;
+    }
+
+    .tab .content {
+      position: absolute;
+      background: #ffffff;
+      top: 39px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .tab .content > article {
+      transform: translateX(100%);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .tab input[type=radio]:checked ~ label {
+      background: #ffffff;
+      border-bottom: 2px solid lightblue;
+      z-index: 2;
+    }
+
+    .tab input[type=radio]:checked + label + .content {
+      z-index: 1;
+    }
+
+    .tab input[type=radio]:checked + label + .content > article {
+      display: block;
+      transform: translateX(0);
+    }
+
+  </style>
+</head>
+<body>
+<div class="main-layout">
+  <ul class="tabs">
+    <li class="tab">
+      <input type="radio" id="tab-1" name="tab-group">
+      <label for="tab-1">Tab 1</label>
+      <div class="content">
+        <article>
+          <h1>Content 1</h1>
+        </article>
+      </div>
+    </li>
+    <li class="tab">
+      <input type="radio" id="tab-2" name="tab-group">
+      <label for="tab-2">Tab 2</label>
+      <div class="content">
+        <article>
+          <h1>Simple Network Management Protocol</h1>
+          <p>Simple Network Management Protocol (SNMP) is an Internet Standard protocol for collecting and organizing
+            information about managed devices on IP networks and for modifying that information to change device
+            behaviour. Devices that typically support SNMP include cable modems, routers, switches, servers,
+            workstations, printers, and more.</p>
+          <p>SNMP is widely used in network management for network monitoring. SNMP exposes management data in the form
+            of variables on the managed systems organized in a management information base (MIB) which describe the
+            system status and configuration. These variables can then be remotely queried (and, in some circumstances,
+            manipulated) by managing applications.</p>
+        </article>
+      </div>
+    </li>
+    <li class="tab">
+      <input type="radio" id="tab-3" name="tab-group" checked>
+      <label for="tab-3">Tab 3</label>
+      <div class="content">
+        <article>
+          <h1>Network monitoring</h1>
+          <p>Network monitoring is the use of a system that constantly monitors a computer network for slow or failing
+            components and that notifies the network administrator (via email, SMS or other alarms) in case of outages
+            or other trouble. Network monitoring is part of network management.</p>
+          <p>While an intrusion detection system monitors a network threats from the outside, a network monitoring
+            system monitors the network for problems caused by overloaded or crashed servers, network connections or
+            other devices.</p>
+          <p>For example, to determine the status of a web server, monitoring software may periodically send an HTTP
+            request to fetch a page. For email servers, a test message might be sent through SMTP and retrieved by
+            IMAP or POP3.</p>
+          <p>Commonly measured metrics are response time, availability and uptime, although both consistency and
+            reliability metrics are starting to gain popularity. The widespread addition of WAN optimization devices
+            is having an adverse effect on most network monitoring tools, especially when it comes to measuring
+            accurate end-to-end delay because they limit round-trip delay time visibility.[2]</p>
+          <p>Status request failures, such as when a connection cannot be established, it times-out, or the document
+            or message cannot be retrieved, usually produce an action from the monitoring system. These actions vary;
+            An alarm may be sent (via SMS, email, etc.) to the resident sysadmin, automatic failover systems may be
+            activated to remove the troubled server from duty until it can be repaired, etc.</p>
+        </article>
+
+      </div>
+    </li>
+    <li class="tab">
+      <input type="radio" id="tab-4" name="tab-group">
+      <label for="tab-4">Tab 4</label>
+      <div class="content">
+        <article>
+          <h1>Content 4</h1>
+        </article>
+      </div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>

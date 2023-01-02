@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>축약 예제</title>
+
+  <style>
+    dfn, abbr {
+      font-family: sans-serif;
+      font-weight: bold;
+      color: #00a;
+      text-decoration: none;
+      font-size: 1.25em;
+      line-height: 1em;
+      cursor: help;
+    }
+
+    @media screen and (max-width: 600px) {
+      abbr[title]::after, dfn[title]::after {
+        content: ' (' attr(title) ') ';
+      }
+    }
+  </style>
+</head>
+<body>
+
+<p>
+  <dfn><abbr title="Cascading Style Sheets">CSS</abbr></dfn> is hard
+</p>
+<p>
+  <dfn><abbr title="HyperText Markup Language">HTML</abbr></dfn> is hard
+</p>
+<p>
+  <dfn><abbr title="Syntactically Awesome Style Sheets">SASS</abbr></dfn> is hard
+</p>
+<p>
+  <dfn><abbr title="Javascript">JS</abbr></dfn> is easy!
+</p>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow</title>
+
+  <style>
+    .container {
+      display: flex;
+      max-width: 160px;
+      gap: 1em;
+    }
+
+    .container > * {
+      flex-shrink: 0;
+    }
+
+    .arrow {
+      width: 0;
+      height: 0;
+
+      border-left: 20px solid pink;
+      border-right: 20px solid green;
+      border-top: 20px solid lightgreen;
+      border-bottom: 20px solid purple;
+    }
+
+    .arrow-up {
+      border-top: 0;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+
+    .arrow-down {
+      border-bottom: 0;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+
+    .arrow-right {
+      border-right: 0;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+    .arrow-left {
+      border-left: 0;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="arrow"></div>
+  <div class="arrow arrow-up"></div>
+  <div class="arrow arrow-down"></div>
+  <div class="arrow arrow-left"></div>
+  <div class="arrow arrow-right"></div>
+</div>
+</body>
+</html>

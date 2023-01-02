@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow</title>
+
+  <style>
+    .container {
+      display: flex;
+      max-width: 160px;
+      gap: 1em;
+    }
+
+    .container > * {
+      flex-shrink: 0;
+    }
+
+    .arrow {
+      width: 40px;
+      height: 40px;
+    }
+
+    .arrow::after {
+      content: ' ';
+      height: 0;
+      width: 0;
+      position: absolute;
+
+      /* border-width : 요소(arrow)의 0.5배 -> 삼각형 그리기 위한 속성*/
+      border: 20px solid transparent;
+
+      /*just for debug*/
+      border-color: #f0f0f0;
+    }
+
+    .arrow-up:after {
+      border-top-width: 0;
+      border-bottom-color: purple;
+    }
+
+    .arrow-down:after {
+      border-bottom-width: 0;
+      border-top-color: purple;
+    }
+
+    .arrow-right:after {
+      border-right-width: 0;
+      border-left-color: purple;
+    }
+
+    .arrow-left:after {
+      border-left-width: 0;
+      border-right-color: purple;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="arrow"></div>
+  <div class="arrow arrow-up"></div>
+  <div class="arrow arrow-down"></div>
+  <div class="arrow arrow-left"></div>
+  <div class="arrow arrow-right"></div>
+</div>
+</body>
+</html>

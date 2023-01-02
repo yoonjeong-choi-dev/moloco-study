@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ - JetBrains</title>
+
+  <style>
+    .faq {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .faq > li {
+      padding: 10px 0;
+      box-sizing: border-box;
+    }
+
+    .faq > li:nth-child(n+2) {
+      border-top: 1px dashed #aaa;
+    }
+
+    .faq input[type=checkbox] {
+      display: none;
+    }
+
+    .faq label{
+      font-weight: bold;
+      color: #000;
+      margin: 20px 0 0 0;
+      cursor: pointer;
+    }
+
+    .faq label::before {
+      display: block;
+      content: '';
+
+      /* arrow with border : see ch2*/
+      width: 0;
+      height: 0;
+      border: 8px solid transparent;
+      border-left: 8px solid #a00;
+      margin: 2px 0 0 8px;
+      float: left
+    }
+
+    .faq input[type=checkbox]:checked + label:before {
+      border: 8px solid transparent;
+      border-top: 8px solid #a00;
+      border-bottom: 0;
+      margin: 5px 3px 0 0;
+    }
+
+    .faq div.content {
+      display: none;
+      color: #666;
+      font-size: 0.9375em;
+      overflow: hidden;
+      padding: 10px 0 10px 30px;
+      box-sizing: border-box;
+      transition: max-height 0.4s;
+    }
+
+    .faq input[type=checkbox]:checked + label + div.content {
+      display: block;
+    }
+  </style>
+
+</head>
+<body>
+<ul class="faq">
+  <li>
+    <input type="checkbox" name="faq" id="faq1">
+    <label for="faq1">Our Licensing Model and JetBrains Toolbox</label>
+    <div class="content">
+      <p>What are the "redistributable products" that are mentioned in the Toolbox Subscription Agreement?</p>
+      <p>What is our licensing model?</p>
+      <p>What is JetBrains Toolbox?</p>
+    </div>
+  </li>
+  <li>
+    <input type="checkbox" name="faq" id="faq2">
+    <label for="faq2">License Types and Users</label>
+    <div class="content">
+      <p>Can I use Community Editions of JetBrains IDEs for developing commercial proprietary software?</p>
+      <p>What is the difference between commercial and personal licenses?</p>
+    </div>
+  </li>
+  <li>
+    <input type="checkbox" name="faq" id="faq3">
+    <label for="faq3">Discounts and Special Programs</label>
+    <div class="content">
+      <p>What is a Classroom License and who qualifies for one?</p>
+      <p>What is an OSS development license and who qualifies for one?</p>
+    </div>
+  </li>
+</ul>
+</body>
+</html>

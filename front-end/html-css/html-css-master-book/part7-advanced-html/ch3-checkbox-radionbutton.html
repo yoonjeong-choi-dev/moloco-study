@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CheckBox and RadioButton</title>
+
+  <style>
+    .main-layout {
+      max-width: 600px;
+
+    }
+
+    .input-container {
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: #000000 dashed 1px;
+    }
+
+    .input-container > label {
+      user-select: none;
+    }
+
+    input.big-input {
+      font-size: 1em;
+      width: 1.25em;
+      height: 1.25em;
+      vertical-align: middle;
+    }
+
+    input.big-input + label {
+      font-size: 1.125em;
+      vertical-align: middle;
+    }
+
+    input[type="checkbox"].design-checkbox {
+      display: none;
+    }
+
+    input[type="checkbox"].design-checkbox + label {
+      position: relative;
+    }
+
+    /* label 태그 앞쪽에 위치한 체크박스 대신 사용할 요소 */
+    input[type="checkbox"].design-checkbox + label::before {
+      display: inline-block;
+      content: '';
+      width: 1.25em;
+      height: 1.25em;
+      border: 2px solid #a66;
+      background-color: #a00;
+      border-radius: 50%;
+
+      /* 레이아웃 상하 위치 맞추기 위해서*/
+      margin: 0 5px -6px 0;
+    }
+
+    /* checked 상태 */
+    input[type="checkbox"].design-checkbox + label::after {
+      position: absolute;
+      left: 4px;
+      content: '✔';
+      font-size: 1.5em;
+      line-height: 0.8;
+      color: #a88;
+      transition: all 0.2s;
+    }
+
+    input[type="checkbox"].design-checkbox + label::after {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    input[type="checkbox"]:checked.design-checkbox + label::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .switch-toggle-container {
+      position: relative;
+      display: inline-block;
+      margin-left: 130px;
+    }
+
+    .switch-toggle-container input {
+      display: none;
+    }
+
+    .switch-toggle-container label {
+      display: block;
+      width: 48px;
+      height: 24px;
+      text-indent: -230%; /* move label text to left */
+      user-select: none;
+    }
+
+    .switch-toggle-container label::before,
+    .switch-toggle-container label::after {
+      content: "";
+      display: block;
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .switch-toggle-container label::before {
+      width: 100%;
+      height: 100%;
+      background-color: #dedede;
+      border-radius: 1em;
+      -webkit-transition: background-color 0.25s ease;
+      transition: background-color 0.25s ease;
+    }
+
+    .switch-toggle-container label::after {
+      top: 0;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 4px rgba(0,0,0,0.45);
+      -webkit-transition: left 0.25s ease;
+      transition: left 0.25s ease;
+    }
+
+    .switch-toggle-container input:checked + label::before {
+      background-color: skyblue;
+    }
+
+    .switch-toggle-container input:checked + label::after {
+      left: 24px;
+    }
+
+    .toggle-icons input[type=radio] {
+      display: none;
+    }
+    .toggle-icons input[type=radio] + label {
+      color: #e0e0e0;
+      font-size: 5em;
+    }
+
+    .toggle-icons input[type=radio]:checked + label {
+      color: #000;
+    }
+
+  </style>
+</head>
+<body>
+<div class="main-layout">
+  <div class="input-container">
+    <input type="checkbox" name="big-checkbox" id="big-checkbox1" value="check" class="big-input">
+    <label for="big-checkbox1">Big Checkbox</label>
+    <input type="checkbox" name="big-checkbox" id="big-checkbox2" value="check" class="big-input">
+    <label for="big-checkbox2">Big Checkbox2</label>
+    <br>
+
+    <input type="radio" name="big-radio" id="big-radio1" value="check" class="big-input">
+    <label for="big-radio1">Big Radio</label>
+    <input type="radio" name="big-radio" id="big-radio2" value="check" class="big-input">
+    <label for="big-radio2">Big Radio2</label>
+  </div>
+
+  <div class="input-container">
+    <input type="checkbox" name="design-checkbox" id="design-checkbox1" checked value="check" class="design-checkbox">
+    <label for="design-checkbox1">Custom Checkbox</label>
+    <input type="checkbox" name="design-checkbox" id="design-checkbox2" value="check" class="design-checkbox">
+    <label for="design-checkbox2">Custom Checkbox2</label>
+  </div>
+
+  <div class="input-container">
+    <div class="switch-toggle-container">
+      <input type="checkbox" name="switch-toggle" id="switch-toggle" value="check">
+      <label for="switch-toggle">Switch Toggle</label>
+    </div>
+  </div>
+
+  <div class="input-container toggle-icons">
+    <input type="radio" id="toggle-icon1" name="weather">
+    <label for="toggle-icon1">☀</label>
+
+    <input type="radio" id="toggle-icon2" name="weather">
+    <label for="toggle-icon2">☁</label>
+
+    <input type="radio" id="toggle-icon3" name="weather">
+    <label for="toggle-icon3">☂</label>
+
+    <input type="radio" id="toggle-icon4" name="weather">
+    <label for="toggle-icon4">☃</label>
+  </div>
+
+</div>
+</body>
+</html>

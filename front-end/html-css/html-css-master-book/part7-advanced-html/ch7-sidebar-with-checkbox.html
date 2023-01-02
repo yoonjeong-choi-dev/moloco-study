@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>체크박스 사이드바</title>
+
+  <style>
+    .main-layout {
+      display: flex;
+      flex-direction: row;
+      min-width: 500px;
+      margin: 0 auto;
+    }
+
+    .main-layout main {
+      flex-basis: auto;
+      flex-grow: 1;
+      background: #f0f0f0;
+    }
+
+    .main-layout aside {
+      flex-basis: auto;
+      flex-grow: 0;
+      background: #e0e0e0;
+    }
+
+    .toggle-aside input[type=checkbox] {
+      display: none;
+    }
+
+    .toggle-aside > input + label {
+      position: relative;
+    }
+    .toggle-aside input[type=checkbox] + label::after {
+      content: "▶";
+      font-size: 1.5em;
+      line-height: 1;
+      width: 40px;
+      box-sizing: border-box;
+
+      position: absolute;
+      left: -40px;
+
+      padding: 10px;
+      background-color: #e0e0e0;
+      border-radius: 0 0 0 15px;
+      box-shadow: 1px 8px 5px -7px rgba(0, 0, 0, 0.5);
+    }
+
+    .toggle-aside input[type=checkbox]:checked + label::after {
+      content: "◀";
+      color: #000;
+    }
+
+    .toggle-aside input[type=checkbox]:checked + label + .content {
+      display: none;
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    .content ul {
+      font-size: 0.9375em;
+      list-style: none;
+      padding: 0 0 10px 15px;
+      margin: 0;
+    }
+    .content li {
+      padding: 10px 0 0;
+    }
+
+  </style>
+</head>
+<body>
+<div class="main-layout">
+  <main>
+    <h1>Main Content Layout</h1>
+    <img src="https://picsum.photos/500">
+  </main>
+  <aside class="toggle-aside">
+    <input type="checkbox" id="aside-button">
+    <label for="aside-button"></label>
+    <div class="content">
+      <ul>
+        <li>Depth 1</li>
+        <li>
+          <ul>
+            <li>Depth1 - 1</li>
+            <li>Depth1 - 2</li>
+            <li>Depth1 - 3</li>
+            <li>Depth1 - 4 : Test Test</li>
+          </ul>
+        </li>
+        <li>Depth 2</li>
+        <li>Depth 3</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+</body>
+</html>
