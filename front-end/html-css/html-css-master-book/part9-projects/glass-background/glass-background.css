@@ -1,0 +1,90 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+#timer-main-layout {
+  background-image: url("https://picsum.photos/800");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.timer {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 50px;
+
+  display: block;
+  text-align: center;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.timer .time-entity {
+  display: inline-block;
+}
+
+.timer .time-value {
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 80px;
+}
+
+.timer .time-field {
+  font-size: 25px;
+}
+
+.timer .separator {
+  font-size: 80px;
+  line-height: 70px;
+  vertical-align: top;
+  margin: 0 10px;
+}
+
+/* time-wrap 이 absolute 이므로 메인 레이아웃 크기 고정을 위해 자식 요소 크기 설정 */
+.spacer{
+  height: 1000px;
+}
+
+.time-wrap {
+  border-radius: 30px;
+
+  /* 가운데 정렬 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -135px 0 0 -310px;
+  width: 620px;
+  height: 270px;
+
+  /* 반투명 효과를 위한 상속 */
+  background: inherit;
+
+  /* before 가상 요소의 크기가 더 크기 때문에 */
+  overflow: hidden;
+}
+
+.time-wrap::before {
+  content: "";
+  position: absolute;
+
+  /* 반투명 효과를 위한 상속 */
+  background: inherit;
+
+  /* 반투명 효과 크기는 원래 요소의 +50px -> top&left 이동*/
+  width: 670px;
+  height: 320px;
+  top: -25px;
+  left: -25px;
+
+  box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.3);
+  filter: blur(25px);
+}
