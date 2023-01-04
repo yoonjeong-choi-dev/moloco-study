@@ -1,0 +1,39 @@
+.folding-button {
+  display: none;
+}
+
+.folding-button + label {
+  padding-left: 25px;
+  background-image: url('./img/menu-open.svg');
+  background-repeat: no-repeat;
+}
+
+.folding-button + label > span {
+  font-weight: bold;
+}
+
+.folding-button:checked + label {
+  background-image: url('./img/menu-close.svg');
+}
+
+.menu .items {
+  width: 200px;
+  list-style: none;
+
+  /* 기본상태에서는 아이템들 안보이게 함 */
+  display: none;
+}
+
+.menu .items li {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.items a {
+  text-decoration: none;
+  color: black;
+}
+
+.folding-button:checked ~ .items {
+  display: block;
+}
