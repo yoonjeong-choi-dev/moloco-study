@@ -1,0 +1,37 @@
+.slider {
+  /* 왼쪽->오른쪽 이동을 위해 선택되지 않은 사진들은 슬라이드 영역 오른쪽 바깥에 위치*/
+  overflow: hidden;
+}
+
+.image-holder li {
+  /*선택되지 않은 이미지들은 모두 오른쪽에 배치*/
+  left: var(--image-width);
+
+  /*보여줘야 하는 이미지가 모두 보여질 때까지 사라질 이미지 계속 보이게 하기 위해서*/
+  transition-delay: 1.0s;
+}
+
+/*체크된 버튼에 대한 이미지 표시 : css만 사용하기 때문에 반복 코드 필요*/
+.slider input[type=radio]:nth-child(1):checked ~ .image-holder > li:nth-child(1) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.slider input[type=radio]:nth-child(2):checked ~ .image-holder > li:nth-child(2) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.slider input[type=radio]:nth-child(3):checked ~ .image-holder > li:nth-child(3) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.slider input[type=radio]:nth-child(4):checked ~ .image-holder > li:nth-child(4) {
+  left: 0;
+  transition: 0.5s;
+  z-index: 1;
+}

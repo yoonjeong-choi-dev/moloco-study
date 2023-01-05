@@ -1,0 +1,110 @@
+.image-holder li {
+  border-radius: 30px;
+  box-shadow: 14px -5px 35px -21px rgba(0,0,0,0.66);
+}
+
+.image-holder img {
+  border-radius: 30px;
+  border: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+/*체크된 버튼에 대한 이미지 표시 : css만 사용하기 때문에 반복 코드 필요*/
+/* Check : Slide 1 */
+.slider input[type=radio]:nth-child(1):checked ~ .image-holder > li:nth-child(1) {
+  left: 0;
+  transition: 0.75s;
+  z-index: 1;
+}
+.slider input[type=radio]:nth-child(1):checked ~ .image-holder > li:nth-child(2) {
+  left: 90px;
+  transition: 0.75s;
+  z-index: 0;
+  transform: scale(0.9);
+}
+.slider input[type=radio]:nth-child(1):checked ~ .image-holder > li:nth-child(3) {
+  left: 170px;
+  transition: 0.75s;
+  z-index: -1;
+  transform: scale(0.8);
+}
+.slider input[type=radio]:nth-child(1):checked ~ .image-holder > li:nth-child(4) {
+  left: 230px;
+  transition: 0.75s;
+  z-index: -2;
+  transform: scale(0.7);
+}
+
+/* Check : Slide 2 */
+.slider input[type=radio]:nth-child(2):checked ~ .image-holder > li:nth-child(1) {
+  left: -90px;
+  transition: 0.75s;
+  z-index: 0;
+  transform: scale(0.9);
+}
+.slider input[type=radio]:nth-child(2):checked ~ .image-holder > li:nth-child(2) {
+  left: 0;
+  transition: 0.75s;
+  z-index: 1;
+}
+.slider input[type=radio]:nth-child(2):checked ~ .image-holder > li:nth-child(3) {
+  left: 90px;
+  transition: 0.75s;
+  z-index: 0;
+  transform: scale(0.9);
+}
+.slider input[type=radio]:nth-child(2):checked ~ .image-holder > li:nth-child(4) {
+  left: 170px;
+  transition: 0.75s;
+  z-index: -1;
+  transform: scale(0.8);
+}
+
+/* Check : Slide 3 */
+.slider input[type=radio]:nth-child(3):checked ~ .image-holder > li:nth-child(1) {
+  left: -170px;
+  transition: 0.75s;
+  z-index: -1;
+  transform: scale(0.8);
+}
+.slider input[type=radio]:nth-child(3):checked ~ .image-holder > li:nth-child(2) {
+  left: -90px;
+  transition: 0.75s;
+  z-index: 0;
+  transform: scale(0.9);
+}
+.slider input[type=radio]:nth-child(3):checked ~ .image-holder > li:nth-child(3) {
+  left: 0;
+  transition: 0.75s;
+  z-index: 1;
+}
+.slider input[type=radio]:nth-child(3):checked ~ .image-holder > li:nth-child(4) {
+  left: 90px;
+  transition: 0.75s;
+  z-index: 0;
+  transform: scale(0.9);
+}
+
+/* Check : Slide 4 */
+.slider input[type=radio]:nth-child(4):checked ~ .image-holder > li:nth-child(1) {
+  left: -270px;
+  transition: 0.75s;
+  z-index: -2;
+  transform: scale(0.7);
+}
+.slider input[type=radio]:nth-child(4):checked ~ .image-holder > li:nth-child(2) {
+  left: -170px;
+  transition: 0.75s;
+  z-index: -1;
+  transform: scale(0.8);
+}
+.slider input[type=radio]:nth-child(4):checked ~ .image-holder > li:nth-child(3) {
+  left: -90px;
+  transition: 0.75s;
+  z-index: 0;
+  transform: scale(0.9);
+}
+.slider input[type=radio]:nth-child(4):checked ~ .image-holder > li:nth-child(4) {
+  left: 0;
+  transition: 0.75s;
+  z-index: 1;
+}

@@ -1,0 +1,64 @@
+:root {
+  --image-width: 640px;
+  --image-height: 480px;
+}
+
+.slider {
+  width: var(--image-width);
+  height: var(--image-height);
+  position: relative;
+  margin: 0 auto;
+}
+
+.slider input[type=radio] {
+  display: none;
+}
+
+.image-holder {
+  padding: 0;
+  margin: 0;
+}
+
+.image-holder li {
+  position: absolute;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullets {
+  /*가운데 정렬*/
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  /*위치 조정*/
+  bottom: 20px;
+  z-index: 2;
+}
+
+.bullets label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+}
+
+/*체크된 버튼에 대한 라벨만 흰색 표시 : css만 사용하기 때문에 반복 코드 필요*/
+.slider input[type=radio]:nth-child(1):checked ~ .bullets > label:nth-child(1) {
+  background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(2):checked ~ .bullets > label:nth-child(2) {
+  background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(3):checked ~ .bullets > label:nth-child(3) {
+  background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(4):checked ~ .bullets > label:nth-child(4) {
+  background-color: #fff;
+}
