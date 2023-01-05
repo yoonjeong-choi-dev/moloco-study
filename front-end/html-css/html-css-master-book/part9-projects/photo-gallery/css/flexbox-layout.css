@@ -1,0 +1,36 @@
+.content {
+  max-width: 1260px;
+  min-height: 858px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  margin: 0 1%;
+}
+
+.post {
+  flex-basis: 23.5%;
+  flex-grow: 1;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+}
+
+/* responsive */
+@media screen and (max-width: 1023px) {
+  .post {
+    flex-basis: 32%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post {
+    flex-basis: 49%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .post {
+    flex-basis: 100%;
+    margin-right: 0;
+  }
+}
