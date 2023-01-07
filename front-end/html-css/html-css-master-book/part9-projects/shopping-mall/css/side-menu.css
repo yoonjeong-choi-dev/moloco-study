@@ -1,0 +1,43 @@
+/* Reset */
+aside.side-bar ul {
+  list-style: none;
+}
+
+.side-menu, .side-menu ul {
+  padding-left: 20px;
+}
+
+.side-menu input, .side-menu .submenu-items {
+  display: none;
+}
+
+.side-menu .submenu-items {
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.side-menu input + label::after {
+  content: '▶';
+}
+
+.side-menu input:checked ~ .submenu-items {
+  display: block;
+}
+
+/* 메인 컨텐츠 옆 사이드 바가 내려 가는 상황 */
+@media screen and (max-width: 1214px) {
+  .side-menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .side-menu > li {
+    flex-basis: 33.333333%;
+    padding: 10px 0;
+  }
+}

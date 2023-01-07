@@ -1,0 +1,97 @@
+/* Wide Slide Banner : See part9-projects/image-slide/css/horizontal-effect.css */
+.wide-slider {
+  overflow: hidden;
+  position: relative;
+
+  width: 100%;
+  height: 500px;
+}
+
+.wide-slider ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wide-slider ul.imgs li {
+  position: absolute;
+  left: 100%;
+  transition-delay: 1s;
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  list-style: none;
+}
+
+.wide-slider img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.wide-slider input[type=radio] {
+  display: none;
+}
+
+.wide-slider .bullets {
+  /* 중앙 정렬 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  bottom: 20px;
+  z-index: 2;
+}
+
+.wide-slider .bullets label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+}
+
+/* Bullets */
+.wide-slider input[type=radio]:nth-child(1):checked ~ .bullets > label:nth-child(1) {
+  background-color: #fff;
+}
+
+.wide-slider input[type=radio]:nth-child(2):checked ~ .bullets > label:nth-child(2) {
+  background-color: #fff;
+}
+
+.wide-slider input[type=radio]:nth-child(3):checked ~ .bullets > label:nth-child(3) {
+  background-color: #fff;
+}
+
+/* Current Image */
+.wide-slider input[type=radio]:nth-child(4):checked ~ .bullets > label:nth-child(4) {
+  background-color: #fff;
+}
+
+.wide-slider input[type=radio]:nth-child(1):checked ~ ul.imgs > li:nth-child(1) {
+  left:0;
+  transition: 1s;
+  z-index: 1;
+}
+.wide-slider input[type=radio]:nth-child(2):checked ~ ul.imgs > li:nth-child(2) {
+  left:0;
+  transition: 1s;
+  z-index: 1;
+}
+.wide-slider input[type=radio]:nth-child(3):checked ~ ul.imgs > li:nth-child(3) {
+  left:0;
+  transition: 1s;
+  z-index: 1;
+}
+.wide-slider input[type=radio]:nth-child(4):checked ~ ul.imgs > li:nth-child(4) {
+  left:0;
+  transition: 1s;
+  z-index: 1;
+}

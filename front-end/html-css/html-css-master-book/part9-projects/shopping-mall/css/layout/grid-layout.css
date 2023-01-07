@@ -1,0 +1,83 @@
+.main-layout {
+  display: grid;
+  grid-template-columns: auto 280px;
+  gap: 1em;
+  grid-template-areas:
+    "header header"
+    "top-menu top-menu"
+    "wide-banner wide-banner"
+    "main aside"
+    "bottom-link bottom-link"
+    "bottom-info bottom-info"
+    "footer footer";
+}
+
+.main-layout .block {
+  width: 100%;
+}
+
+.main-layout .block span {
+  width: 100%;
+}
+
+/* Grid Area Definition*/
+.main-layout header {
+  grid-area: header;
+}
+
+.main-layout nav.top-menu {
+  grid-area: top-menu;
+}
+
+.main-layout .wide-banner {
+  grid-area: wide-banner;
+}
+
+.main-layout main.block {
+  grid-area: main;
+  max-width: 906px;
+}
+
+.main-layout aside.block {
+  grid-area: aside;
+  min-width: 280px;
+}
+
+.main-layout .bottom-link {
+  grid-area: bottom-link
+}
+
+.main-layout .bottom-info {
+  grid-area: bottom-info;
+}
+
+.main-layout footer {
+  grid-area: footer;
+}
+
+/* 메인 컨텐츠 옆 사이드 바가 내려 가는 상황 */
+@media screen and (max-width: 1214px) {
+  .main-layout {
+    grid-template-columns: 100%;
+    grid-template-areas: "header" "top-menu" "wide-banner" "main" "aside" "bottom-link" "bottom-info" "footer";
+  }
+
+  .main-layout main.block {
+    max-width: unset;
+  }
+}
+
+@media  screen and (max-width: 767px) {
+  .main-layout .block{
+    width: 100%;
+  }
+  .main-layout aside.block{
+    min-height: auto;
+    max-width: 100%;
+  }
+  .main-layout .block.top-menu{
+    width: 260px;
+    height: 100%;
+    box-shadow: 0 0 15px -5px rgba(0,0,0,0.5);
+  }
+}

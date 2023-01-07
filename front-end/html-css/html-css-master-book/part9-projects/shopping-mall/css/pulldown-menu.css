@@ -1,0 +1,226 @@
+/* Reset */
+.site-menu ul {
+  list-style: none;
+}
+
+.site-menu ul li {
+  list-style: none;
+}
+
+.top-menu {
+  width: 100%;
+}
+
+.top-menu ul {
+  list-style: none;
+}
+
+/* -------------------------------- */
+/* Fall Down Basic : Site Menu 에 적용됨*/
+.inline-menu {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 80px;
+  padding: 0;
+  margin: 0;
+
+  position: relative;
+}
+
+.inline-menu > li {
+  flex-basis: 120px;
+  flex-grow: 0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.inline-menu .submenu-items {
+  display: none;
+  width: 120px;
+
+  position: absolute;
+  margin: 5px 0 0 -25px;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px -5px #000;
+
+  z-index: 3;
+}
+
+.inline-menu > li.submenu:hover > .submenu-items {
+  display: block;
+}
+
+.inline-menu .submenu-items ul {
+  padding: 20px;
+  text-align: left;
+}
+
+.inline-menu .submenu-items li {
+  padding: 5px 0;
+  box-sizing: border-box;
+}
+
+
+/* -------------------------------- */
+/* Mobile Menu */
+#mobile_menu_button {
+  display: none;
+}
+
+#mobile_menu_button + header > .mobile-menu label:after {
+  content: '☰';
+}
+
+#mobile_menu_button:checked + header > .mobile-menu label:after {
+  content: 'x';
+}
+
+header .mobile-menu {
+  display: none;
+  z-index: 5;
+
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+
+  color: #000;
+  line-height: 1;
+  font-size: 2.5em;
+  text-align: center;
+  background-color: #f8f8f8;
+  border: 1px solid #e8e8e8;
+}
+
+/* Dummy Node to Prevent Scroll */
+#scroll-disabled {
+  position: fixed;;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+@media screen and (max-width: 767px) {
+  header .mobile-menu {
+    display: block;
+  }
+
+  .top-menu {
+    display: none;
+    z-index: 4;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    border: 0;
+    border-left: 1px solid #e0e0e0;
+    background-color: #f8f8f8;
+  }
+
+  #mobile_menu_button:checked ~ .top-menu {
+    display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .top-menu .inline-menu {
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 70px 0 0 20px;
+    box-sizing: border-box;
+  }
+
+  .top-menu .inline-menu .submenu-items {
+    display: block;
+
+    position: relative;
+    margin: 0 0 0 25px;
+
+    border: 0;
+    box-shadow: none;
+    background-color: inherit;
+    width: 100%;
+  }
+
+  /* 1st-depth menu 한 줄씩 표현*/
+  .top-menu .inline-menu > li {
+    flex-basis: 100%;
+    text-align: left;
+    gap: 0;
+    padding: 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .top-menu .inline-menu .submenu-items ul {
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+}
+
+/* -------------------------------- */
+/* GNB Site Menu */
+.site-menu .inline-menu {
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.site-menu .inline-menu > li {
+  flex-basis: 60px;
+  letter-spacing: -1px;
+  text-align: right;
+  padding: 5px 0;
+}
+
+/* search */
+.site-menu .inline-menu > li.search-menu {
+  display: block;
+  flex-grow: 1;
+}
+
+.site-menu .inline-menu .product-search-form {
+  display: block;
+  flex-grow: 1;
+  position: relative;
+}
+
+.site-menu .product-search-form input[type=text] {
+  height: 21px;
+}
+
+.product-search-form button {
+  display: inline-block;
+  height: 27px;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 767px)  {
+  header .site-menu {
+    width: 100%;
+  }
+
+  .site-menu .inline-menu > li {
+    text-align: center;
+    flex-basis: 19%;  /* 경계선으로 인해서 부모 노드(inline-menu)보다 너비가 커지지 않게 하기 위해서*/
+    padding: 10px 0;
+    border-style: solid;
+    border-width: 1px 0 1px 1px;
+    border-color: #e0e0e0;
+    flex-grow: 1;
+  }
+
+  .site-menu .inline-menu > li:nth-last-child(2) {
+    border-width: 1px;
+  }
+
+  .site-menu .inline-menu > li:last-child {
+    border: 0;
+  }
+}

@@ -1,0 +1,187 @@
+.element .single-row {
+  overflow: hidden;
+}
+
+.element .multi-row {
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.rolling {
+  position: relative;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+
+.grid-size-4 ul {
+  padding: 0;
+}
+
+.grid-size-4 li {
+  list-style: none;
+}
+
+.element .grid-size-4 {
+  display: flex;
+  gap: 40px 2%;
+
+  margin: 0;
+  padding: 0;
+}
+
+.element .grid-size-4 > li {
+  flex-basis: 23.5%;
+  flex-grow: 1;
+}
+
+.element .grid-size-4> li {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.multi-row > li{
+  margin-bottom: 30px;
+}
+
+/* Product */
+.grid-size-4 .product-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.thumbnail img {
+  width: 100%;
+  background-color: #fff;
+  display: block;
+}
+
+.multi-row .description{
+  margin: 10px 0;
+}
+
+.rolling .description {
+  position: absolute;
+  top: 0;
+
+  text-align: center;
+  width: 23.5%;
+  height: 100%;
+  padding-top: 70px;
+  box-sizing: border-box;
+
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.rolling .description a {
+  color: #000;
+}
+
+.rolling li:hover .description {
+  opacity: 1;
+}
+
+/* Pagination */
+.rolling > input {
+  display: none;
+}
+
+.rolling label {
+  position: absolute;
+  top: 40%;
+  z-index: 1;
+}
+
+.rolling > label:first-of-type {
+  left: 0;
+}
+
+.rolling > label:last-of-type {
+  right: 0;
+}
+
+/* Design Pagination Button */
+.rolling > label:first-of-type::before, .rolling > label:last-of-type::after {
+  position: absolute;
+
+  font-size: 3ex;
+  font-family: consolas, monospace;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.75);
+
+  box-sizing: border-box;
+  box-shadow: 2px 5px 10px -5px rgba(0, 0, 0, 0.5);
+
+  width: 1em;
+  height: 1em;
+  line-height: 0.875;
+  padding-left: 0.2em;
+
+  border-radius: 1.5em;
+}
+
+.rolling > label:first-of-type::before {
+  content: "<";
+  margin-left: 0.25em;
+}
+
+.rolling > label:last-of-type::after {
+  content: ">";
+  margin-left: -1.25em;
+}
+
+.rolling > input:checked + label {
+  display: none;
+}
+
+
+@media screen and (min-width: 768px) {
+  /* pagination */
+  .rolling > input:first-of-type:checked ~ ul > li:nth-child(-n + 4) {
+    display: block;
+  }
+
+  .rolling > input:last-of-type:checked ~ ul > li:nth-child(-n + 4) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .element .grid-size-4.single-row {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /* 모바일에서는 2개씩 배치*/
+  .element .grid-size-4 > li{
+    flex-basis: 49%;
+    position: relative;
+  }
+
+  /* 모바일에서는 hover 효과 없앰*/
+  .rolling .description{
+    opacity: 1;
+    width: 100%;
+    padding-top: 43%;
+  }
+
+  /* pagination */
+  .rolling label{
+    top: 45%;
+  }
+  .rolling > input:first-of-type:checked ~ ul > li:nth-child(-n+4){
+    display: block;
+  }
+  .rolling > input:last-of-type:checked ~ ul > li:nth-child(n+5){
+    display: block;
+  }
+  .rolling > input:last-of-type:checked ~ ul > li:nth-child(-n+4){
+    display: none;
+  }
+  .rolling > input:first-of-type:checked ~ ul > li:nth-child(n+5){
+    display: none;
+  }
+}

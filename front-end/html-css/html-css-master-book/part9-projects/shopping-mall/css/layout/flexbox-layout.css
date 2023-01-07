@@ -1,0 +1,33 @@
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.main-layout .block {
+  flex-grow: 1;
+  flex-basis: 100%;
+}
+
+.main-layout main.block {
+  flex-basis: 906px;
+}
+
+.main-layout aside.block {
+  flex-basis: 280px;
+  flex-grow: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+.block{
+  min-height: 40px;
+}
+.block:nth-child(7n+1){background-color:lightblue;}
+.block:nth-child(7n+2){background-color:orange;}
+.block:nth-child(7n+3){background-color:darkgray;}
+.block:nth-child(7n+4){background-color:coral;}
+.block:nth-child(7n+5){background-color:pink;}
+.block:nth-child(7n+6){background-color:khaki;}
+.block:nth-child(7n+7){background-color:lightslategray;}

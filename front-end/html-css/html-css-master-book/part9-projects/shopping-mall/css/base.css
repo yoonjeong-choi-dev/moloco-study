@@ -1,0 +1,261 @@
+/* -------------------------------- */
+/* Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 0.875em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', helvetica, 'Apple SD Gothic Neo', sans-serif;
+  color: #555;
+}
+
+a, a:active, a:visited, a:link {
+  text-decoration: none;
+  color: #555;
+}
+
+a:hover {
+  color: #a00;
+}
+
+.element {
+  width: 100%;
+}
+
+/* -------------------------------- */
+/* Main Layout */
+.main-layout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -------------------------------- */
+/* Text Font Size */
+.txt-lg {
+  font-size: 0.9375rem;
+}
+
+.txt-sm {
+  font-size: 0.8125rem;
+}
+
+.txt-xs {
+  font-size: 0.75rem;
+}
+
+/* -------------------------------- */
+/* Header */
+header {
+  display: flex;
+  margin: 20px 0 10px 0;
+}
+
+header .sns {
+  width: 200px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.sns .icon {
+  width: 20px;
+  height: 20px;
+}
+
+header .logo {
+  text-align: center;
+  margin: 10px 0;
+  flex-grow: 1;
+  font-size: 1.75em;
+  letter-spacing: 10px;
+}
+
+header .site-menu {
+  width: 300px;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Top menu */
+.top-menu {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+@media screen and (max-width: 1023px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  header .sns {
+    width: 100%;
+    padding-left: 20px;
+    box-sizing: border-box;
+  }
+
+  header .logo {
+    margin: 20px 0;
+  }
+
+  header .site-menu {
+    width: 100%;
+  }
+
+  .block .bottom-info {
+    flex-wrap: wrap;
+  }
+
+  .block .bottom-info > div {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+/* 메인 컨텐츠 옆 사이드 바가 내려 가는 상황*/
+@media screen and (max-width: 1214px) {
+  .main-layout aside.block {
+    flex-basis: 100%;
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main-layout .block.top-menu {
+    width: 260px;
+    height: 100%;
+    box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.5);
+  }
+}
+
+
+/* -------------------------------- */
+/* Banner in Main Content */
+.banner {
+  margin-bottom: 40px;
+}
+
+.banner img {
+  display: block;
+  width: 100%;
+  max-height: 350px;
+}
+
+/* -------------------------------- */
+/* Bottom Page Link */
+.bottom-link ul {
+  list-style: none;
+}
+
+.bottom-link {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #555;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f4f4f4;
+}
+
+.bottom-link .row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  padding: 0;
+}
+
+.bottom-link li {
+  align-self: center;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .bottom-link .row {
+    /* 한 행에 2개 링크 배치 */
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 10px;
+  }
+}
+
+/* -------------------------------- */
+/* Bottom Company Information */
+.bottom-info {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5%;
+
+  padding: 30px 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.bottom-info > .info-col {
+  flex-grow: 1;
+}
+
+.info-col h4 {
+  margin: 5px 0;
+  color: #000;
+
+
+  border: 0;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  text-align: left;
+}
+
+.info-col p {
+  display: flex;
+  margin: 5px 0;
+}
+
+.info-col p > span:first-child {
+  min-width: 130px;
+  width: 40%;
+}
+
+.info-col .button-groups a {
+  display: block;
+  float: left;
+
+  width: 45%;
+  height: 35px;
+  line-height: 37px;
+
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #333;
+  text-align: center;
+
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.info-col .button-groups a:first-of-type {
+  margin-right: 5%;
+}
+
+.info-col .button-groups a:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .bottom-info {
+    flex-wrap: wrap;
+  }
+
+  .bottom-info .info-col {
+    flex-basis: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+/* -------------------------------- */
+/* Footer */
+footer {
+  text-align: center;
+}

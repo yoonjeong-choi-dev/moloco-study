@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Mall</title>
+
+  <script src="index.js"></script>
+
+<!--  <link rel="stylesheet" href="css/debug.css">-->
+
+<!--  <link rel="stylesheet" href="css/layout/flexbox-layout.css">-->
+  <link rel="stylesheet" href="css/layout/grid-layout.css">
+
+  <!-- Common Component -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pulldown-menu.css">
+  <link rel="stylesheet" href="css/wide-banner-image-slider.css">
+  <link rel="stylesheet" href="css/thumbnail-list.css">
+  <link rel="stylesheet" href="css/side-menu.css">
+
+</head>
+<body>
+<div class="main-layout wrap">
+  <!-- Header -->
+  <input type="checkbox" id="mobile_menu_button">
+  <header class="block">
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu">
+      <label for="mobile_menu_button"></label>
+    </div>
+    <!-- SNS icons -->
+    <div class="sns">
+      <span><a href="#" target="_blank"><img class="icon" src="img/sns_instagram_square.svg" alt="instagram"></a></span>
+      <span><a href="#" target="_blank"><img class="icon" src="img/sns_facebook_square.svg" alt="facebook"></a></span>
+      <span><a href="#" target="_blank"><img class="icon" src="img/sns_twitter_square.svg" alt="twitter"></a></span>
+    </div>
+    <!-- Title -->
+    <h1 class="logo">Shopping Mall</h1>
+    <!-- GNB -->
+    <div class="site-menu txt-xs">
+      <ul class="inline-menu">
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#">Sign Up</a></li>
+        <li><a href="#">Cart <strong>7</strong></a></li>
+        <li class="submenu">
+          <a href="#">My Shop</a>
+          <div class="submenu-items">
+            <ul>
+              <li><a href="#">Shopping</a></li>
+              <li><a href="#">Orders</a></li>
+              <li><a href="#">Favorites</a></li>
+              <li><a href="#">Savings</a></li>
+              <li><a href="#">My Posts</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">Support</a></li>
+        <li class="search-menu">
+          <form class="product-search-form" name="" action="/product/search" method="get" target="_self">
+            <input type="text" id="keyword" name="keyword" size="20" maxlength="50" placeholder="Product Search" value="">
+            <button type="button">Search</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Top menu -->
+  <nav id="top-menu" class="block top-menu">
+    <ul class="inline-menu">
+      <li><a href="#">About</a></li>
+      <li><a href="#">BRAND</a></li>
+      <li class="submenu">
+        <a href="#">SHOP</a>
+        <div class="submenu-items">
+          <ul>
+            <li><a href="#">NEW</a></li>
+            <li><a href="#">OUTER</a></li>
+            <li><a href="#">TOP</a></li>
+            <li><a href="#">DRESS</a></li>
+            <li><a href="#">BOTTOM</a></li>
+            <li><a href="#">ACC</a></li>
+            <li><a href="#">SALE</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="submenu">
+        <a href="#">BOARD</a>
+        <div class="submenu-items">
+          <ul>
+            <li><a href="#">NOTICE</a></li>
+            <li><a href="#">Q &amp; A</a></li>
+            <li><a href="#">REVIEW</a></li>
+            <li><a href="#">EVENT</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="submenu">
+        <a href="#">MYSHOP</a>
+        <div class="submenu-items">
+          <ul>
+            <li><a href="#">Shopping</a></li>
+            <li><a href="#">Orders</a></li>
+            <li><a href="#">Favorites</a></li>
+            <li><a href="#">Savings</a></li>
+            <li><a href="#">My Posts</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Wide Slide Banner -->
+  <div class="block wide-banner">
+    <div class="wide-slider">
+      <!-- Hidden Radio for Bullets -->
+      <input type="radio" name="wide-banner-slide" id="wide-banner-slide1" checked>
+      <input type="radio" name="wide-banner-slide" id="wide-banner-slide2">
+      <input type="radio" name="wide-banner-slide" id="wide-banner-slide3">
+      <input type="radio" name="wide-banner-slide" id="wide-banner-slide4">
+
+      <!-- Images -->
+      <ul class="imgs">
+        <li><a href="#"><img src="img/1260x500_number1.jpg" alt="wide-banner-image"></a></li>
+        <li><a href="#"><img src="img/1260x500_number2.jpg" alt="wide-banner-image"></a></li>
+        <li><a href="#"><img src="img/1260x500_number3.jpg" alt="wide-banner-image"></a></li>
+        <li><a href="#"><img src="img/1260x500_number4.jpg" alt="wide-banner-image"></a></li>
+      </ul>
+
+      <!-- Bullets -->
+      <div class="bullets">
+        <label for="wide-banner-slide1">&nbsp;</label>
+        <label for="wide-banner-slide2">&nbsp;</label>
+        <label for="wide-banner-slide3">&nbsp;</label>
+        <label for="wide-banner-slide4">&nbsp;</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Contents -->
+  <main class="block">
+    <!-- Image Banner -->
+    <div class="element banner">
+      <a href="#"><img src="img/906x350_number1.jpg"></a>
+    </div>
+    <!-- Rolling Banner -->
+    <div class="element rolling">
+      <input type="radio" id="rolling-prev" name="rolling" class="rolling-prev" checked>
+      <label for="rolling-prev"></label>
+      <input type="radio" id="rolling-next" name="rolling" class="rolling-next">
+      <label for="rolling-next"></label>
+
+      <!-- Rolling Items -->
+      <ul class="grid-size-4 single-row">
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number1.jpg" alt="Sample Product 1"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 1</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 1</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number2.jpg" alt="Sample Product 2"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 2</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 2</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number3.jpg" alt="Sample Product 3"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 3</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 3</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number4.jpg" alt="Sample Product 4"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 4</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 4</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number5.jpg" alt="Sample Product 5"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 5</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 5</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number6.jpg" alt="Sample Product 6"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 6</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 6</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number7.jpg" alt="Sample Product 7"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 7</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 7</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <!--        <li>-->
+        <!--          <div class="thumbnail">-->
+        <!--            <div class="img-container">-->
+        <!--              <a href="#"><img src="img/300x300_number8.jpg" alt="Sample Product 8"></a>-->
+        <!--            </div>-->
+        <!--            <div class="icon">-->
+        <!--              <span class="new"></span>-->
+        <!--              <span class="md"></span>-->
+        <!--            </div>-->
+        <!--          </div>-->
+        <!--          <div class="description txt-xs">-->
+        <!--            <div class="product-name"><a href="#">Sample Product 8</a></div>-->
+        <!--            <ul>-->
+        <!--              <li><span>Product Summary</span> : <span>#GOOD 8</span></li>-->
+        <!--              <li><span>List Price</span> : <span>$1,000</span></li>-->
+        <!--              <li><span>Current Price</span> : <span>$777</span></li>-->
+        <!--            </ul>-->
+        <!--          </div>-->
+        <!--        </li>-->
+      </ul>
+    </div>
+    <!-- Product List -->
+    <div class="element">
+      <ul class="grid-size-4 multi-row">
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number1.jpg" alt="Sample Product 1"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 1</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 1</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number2.jpg" alt="Sample Product 2"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 2</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 2</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number3.jpg" alt="Sample Product 3"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 3</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 3</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number4.jpg" alt="Sample Product 4"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 4</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 4</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number5.jpg" alt="Sample Product 5"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 5</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 5</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number6.jpg" alt="Sample Product 6"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 6</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 6</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="thumbnail">
+            <div class="img-container">
+              <a href="#"><img src="img/300x300_number7.jpg" alt="Sample Product 7"></a>
+            </div>
+            <div class="icon">
+              <span class="new"></span>
+              <span class="md"></span>
+            </div>
+          </div>
+          <div class="description txt-xs">
+            <div class="product-name"><a href="#">Sample Product 7</a></div>
+            <ul>
+              <li><span>Product Summary</span> : <span>#GOOD 7</span></li>
+              <li><span>List Price</span> : <span>$1,000</span></li>
+              <li><span>Current Price</span> : <span>$777</span></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="block side-bar">
+    <ul class="side-menu">
+      <li><a href="#">인문</a></li>
+      <li>
+        <input type="checkbox" id="side-menu-novel">
+        <label for="side-menu-novel">소설</label>
+        <div class="submenu-items">
+          <ul>
+            <li><a href="#">한국 소설</a></li>
+            <li><a href="#">영미  소설소설</a></li>
+            <li><a href="#">프랑스 소설</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">요리</a></li>
+      <li>
+        <input type="checkbox" id="side-menu-computer">
+        <label for="side-menu-computer">컴퓨터</label>
+        <div class="submenu-items">
+          <ul>
+            <li><a href="#">컴퓨터 공학</a></li>
+            <li><a href="#">네트워크</a></li>
+            <li><a href="#">운영체제</a></li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <input type="checkbox" id="side-menu-science">
+        <label for="side-menu-science">과학</label>
+        <div class="submenu-items">
+          <ul>
+            <li><a href="#">수학</a></li>
+            <li><a href="#">교양 수학</a></li>
+            <li><a href="#">물리학</a></li>
+            <li><a href="#">대학 교재</a></li>
+            <li><a href="#">초과학</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">건강</a></li>
+      <li><a href="#">자기계발</a></li>
+    </ul>
+  </aside>
+
+  <!-- Bottom link -->
+  <div class="block bottom-link">
+    <ul class="row">
+      <li><a href="#">Terms Condition</a></li>
+      <li><a href="#">Help Center</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">PC Version</a></li>
+    </ul>
+  </div>
+
+  <!-- Bottom Company Info -->
+  <div class="block bottom-info txt-sm">
+    <div class="info-col cs-info">
+      <h4>CUSTOMER CENTER</h4>
+      <p class="phone"><a href="#">02-123-4567</a></p>
+      <p>Fax : 02-1234-7890</p>
+      <p>
+        <span>월 ~ 금</span>
+        <span>오전 10:00 ~ 오후 06:00</span>
+      </p>
+      <p>
+        <span>토</span>
+        <span>오전 10:00 ~ 오후 02:00</span>
+      </p>
+      <p>
+        <span>점심시간(토요일 제외)</span>
+        <span>오후 12:00 ~ 오후 01:00</span>
+      </p>
+      <p>일 / 공휴일 휴무</p>
+      <div class="button-groups">
+        <a href="#" class="call">고객센터 전화연결</a>
+        <a href="#">상품문의하기</a>
+      </div>
+    </div>
+
+    <div class="info-col cs-bank">
+      <h4>BANK INFO.</h4>
+      <p>
+        <span>하나은행</span>
+        <span>123-456789-10-1112</span>
+      </p>
+      <p>
+        <span>예금주</span>
+        <span>(주)쇼핑몰</span>
+      </p>
+    </div>
+
+    <div class="info-col company-info">
+      <h4>COMPANY INFO.</h4>
+      <p>
+        <span>상호</span>
+        <span>(주)쇼핑몰</span>
+      </p>
+      <p>
+        <span>수입원</span>
+        <span>SHOPPING COMPANY</span>
+      </p>
+      <p>
+        <span>공식판매원</span>
+        <span>(주)쇼핑몰</span>
+      </p>
+      <p>
+        <span>대표이사</span>
+        <span><a href="#">최윤정</a></span>
+      </p>
+      <p>
+        <span>대표전화</span>
+        <span>02-1234-5678</span>
+      </p>
+      <p>
+        <span>주소</span>
+        <span>서울특별시 강남구 가로수길 1 가로수빌딩 1001호</span>
+      </p>
+      <p>
+        <span>사업자등록번호</span>
+        <span>123-45-67890</span>
+      </p>
+      <p>
+        <span>통신판매업신고</span>
+        <span>제 2020-서울중구-1234호</span>
+      </p>
+      <p>
+        <span>개인정보관리책임자</span>
+        <span><a href="#">홍길동<br>support@domain.com</a></span>
+      </p>
+      <p>
+        <span>호스팅제공</span>
+        <span>(주)구글클라우드</span>
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="block">
+    <p>COPYRIGHT © 2023 Shopping Mall. ALL RIGHTS RESERVED.</p>
+  </footer>
+</div>
+
+</body>
+</html>
